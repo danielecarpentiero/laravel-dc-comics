@@ -42,8 +42,9 @@ class ComicController extends Controller
         $comic->series = $data['series'];
         $comic->sale_date = $data['sale_date'];
         $comic->type = $data['type'];
-        $comic->artists = str_getcsv($data['artists']);
-        $comic->writers = str_getcsv($data['writers']);
+        $comic->artists = explode(',', $data['artists']);
+        $comic->writers = explode(',', $data['writers']);
+
 
         $comic->save();
 
@@ -56,6 +57,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
+
         return view('comics.show', compact('comic'));
     }
 
