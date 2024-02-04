@@ -13,6 +13,7 @@
             @endforeach
         </ul>
         <a href="{{route('comics.create')}}">Add a new comic</a>
+        <br>
     </main>
 </div>
 @endsection

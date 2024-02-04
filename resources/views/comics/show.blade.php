@@ -19,5 +19,8 @@
         @endforeach
     </ul>
     <a href="{{ route('comics.index') }}">Back to comics list</a>
+    <br>
+    <a href="{{ route('comics.edit', ['comic' => $comic->id]) }}">Edit this comic</a>
+
 </div>
 @endsection
