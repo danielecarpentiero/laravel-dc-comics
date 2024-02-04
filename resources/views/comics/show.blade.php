@@ -21,6 +21,11 @@
     <a href="{{ route('comics.index') }}">Back to comics list</a>
     <br>
     <a href="{{ route('comics.edit', ['comic' => $comic->id]) }}">Edit this comic</a>
+    <form action="{{route('comics.destroy', ['comic' => $comic->id])}} style="display: inline-block;" onsubmit="return confirm('Are you sure you want to delete this comic?');"" method="post">
+        @csrf
+        @method('delete')
+        <input type="submit" class="btn btn-danger" value="Delete the record">
+        </form>
 
 </div>
 @endsection

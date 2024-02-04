@@ -10,6 +10,11 @@
                 {{$comic['title']}} 
                 </a>
             </li> 
+            <form action="{{route('comics.destroy', ['comic' => $comic->id])}} style="display: inline-block;" onsubmit="return confirm('Are you sure you want to delete this comic?');"" method="post">
+            @csrf
+            @method('delete')
+            <input type="submit" class="btn btn-danger" value="Delete the record">
+            </form>
             @endforeach
         </ul>
         <a href="{{route('comics.create')}}">Add a new comic</a>
